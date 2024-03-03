@@ -1,0 +1,66 @@
+
+{% extends 'sc/scbase.html' %}
+{% block content %}
+
+<div class="bs-docs-example">
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th>Company</th>
+                <th>Booking Date</th>
+                
+                <th>Problem</th>
+                <th>Status</th>
+                
+                
+                <th>NeedPicup</th>
+                <th>Address</th>
+                <th>Phone</th>
+               <th>Name</th>
+               <th>update</th>
+               <th>assign</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in data %}
+            <tr>
+                <td>
+                    {{i.1}}
+                </td>
+
+
+                <td>
+                    {{i.2}}
+                </td>
+
+                <td>
+                    {{i.3}}
+                </td>
+                <td>
+                    {{i.4}}
+                </td>
+                
+                <td>{{i.8}}</td>
+                <td>{{i.12}}</td>
+                <td>{{i.13}}</td>
+                <td>{{i.10}}</td>
+                <td>
+                    <a href="/updatebookingstatus/?id={{i.0}}">Update status</a>
+                </td>
+                <td>
+                    <a href="/assigndelivaryboy/?id={{i.0}}&cid={{i.5}}">AssignDelivaryboy</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,62 @@
+
+{% extends 'delivaryboy/dbase.html' %}
+{% block content %}
+
+<div class="bs-docs-example">
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Company</th>
+                <th>Servicename</th>
+                <th>Booking ID</th>
+               <th>Status</th>
+               <th>PickUp</th>
+               <th>Delivary</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in data %}
+            <tr>
+                <td>
+                    {{i.0}}
+                </td>
+
+
+                <td>
+                    {{i.1}}
+                </td>
+
+                <td>
+                    {{i.2}}
+                </td>
+                <td>
+                    {{i.4}}
+                </td>
+                <td>
+                    {{i.3}}
+                </td>
+                <td>
+                    {{i.5}}
+                </td>
+                <td>{{i.6}}</td>
+                <td>
+                    <a href="/deliverstatus/?id={{i.5}}&stat=Pickup">Pickup</a>
+                </td>
+                <td>
+                    <a href="/deliverstatus/?id={{i.5}}&stat=Delivered">Delivered</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+{% endblock %}
